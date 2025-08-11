@@ -13,7 +13,11 @@ public class PessoaService {
     private final PessoaRepository pessoaRepository;
 
     public PessoaService(PessoaRepository pessoaRepository) {
+
         this.pessoaRepository = pessoaRepository;
+    }
+    public List<Pessoa> buscarPorFaixaEtaria(int idadeMin, int idadeMax) {
+        return pessoaRepository.findByIdadeBetween(idadeMin, idadeMax);
     }
 
 
